@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+const mlurl = process.env.mlurl;
 const PlantDiseaseDetection = () => {
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
@@ -22,7 +22,7 @@ const PlantDiseaseDetection = () => {
     formData.append("file", file);
 
     try {
-      const res = await axios.post("https://mlmodelapi-wobq.onrender.com/predict", formData);
+      const res = await axios.post(mlurl+'/predict', formData);
       setResult(res.data);
     } catch (err) {
       console.error(err);
