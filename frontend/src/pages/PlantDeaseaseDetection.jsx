@@ -22,7 +22,7 @@ const PlantDiseaseDetection = () => {
     formData.append("file", file);
 
     try {
-      const res = await axios.post("http://127.0.0.1:8000/predict", formData);
+      const res = await axios.post("https://mlmodelapi-wobq.onrender.com/predict", formData);
       setResult(res.data);
     } catch (err) {
       console.error(err);
