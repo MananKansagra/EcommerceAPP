@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-const mlurl = process.env.mlurl;
+const mlurl = process.env.NEXT_PUBLIC_MLURL;
+
 const PlantDiseaseDetection = () => {
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
